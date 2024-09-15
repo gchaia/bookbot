@@ -7,7 +7,7 @@ def count_words(text):
     for i in range (0,len(words)):
         counter+=1
     return counter
-
+    
 def count_chars(text):
     text=text.lower()
     words=text.split()
@@ -34,8 +34,11 @@ def count_chars(text):
     return char_dict
 
 def main():
-    print (count_words(file_contents))
-    print (count_chars(file_contents))
+    print ("--- Begin report of books/frankenstein.txt ---")
+    print(f"{count_words(file_contents)} words found in the document")
+    for key,value in count_chars(file_contents).items():
+        print(f"The '{key}' character was found {value} times")
+    print("--- End report ---")
 
 main()
 
